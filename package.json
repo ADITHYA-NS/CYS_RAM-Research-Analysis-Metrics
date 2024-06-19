@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "google-search-results-nodejs": "2.1.0"
+    "google-search-results-nodejs": "^2.1.0"
   },
   "bundleDependencies": [
     "google-search-results-nodejs"
