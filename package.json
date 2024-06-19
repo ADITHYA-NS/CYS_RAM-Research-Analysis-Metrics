@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "google-search-results-nodejs": "^2.1.0"
   },
   "bundleDependencies": [
