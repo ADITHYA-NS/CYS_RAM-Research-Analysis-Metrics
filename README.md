@@ -1,2 +1,2 @@
-###CYS-RAM###
-##Department Research Tracker##
+#CYS-RAM
+##Department Research Tracker
