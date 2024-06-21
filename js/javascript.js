@@ -26,7 +26,7 @@ console.log("\nFetching the details from Google Scholar");
 
 // Define author IDs and their corresponding callbacks
 const authors = [
-  { id: "Xl_P9V0AAAAJXl_P9V0AAAAJ", name: "Dr. M. Sethumadhavan" },
+  { id: "Xl_P9V0AAAAJ", name: "Dr. M. Sethumadhavan" },
   { id: "nlt0DD4AAAAJ", name: "Dr. Chungath Srinivasan" },
   { id: "K2n1nh0AAAAJ", name: "Dr. Lakshmy K.V" },
   { id: "8AwtAWsAAAAJ", name: "Dr. Amritha P P" },
@@ -69,8 +69,10 @@ function callback(data) {
     ramImagesDiv.style.display = 'none';
   }
 }
-//search.json({ engine: "google_scholar_author", author_id: authors[0].id, hl: "en" }, callback);
+
+// Fetch data from Google Scholar
 function checkeventbyID (event) {
+  
   alert(`Submitted Successfully!`);
   const enteredId = document.getElementById('Search_by_Id').value.trim();
   console.log(enteredId);
