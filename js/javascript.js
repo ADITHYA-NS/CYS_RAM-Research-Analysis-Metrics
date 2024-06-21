@@ -52,23 +52,37 @@ function callback(data) {
   const hindex_c = data['cited_by']['table'][1]['h_index']['all'];
   const i10index_c = data['cited_by']['table'][2]['i10_index']['all'];
   console.log( author + " has " + publications + " publications ~~~ citations : " + citations_c + ", h-index : " + hindex_c + ", i10-index : " + i10index_c);
-  const outputHTML = `
-    <div>
-      <h2>${author}</h2>
-      <p>Publications: ${publications}</p>
-      <p>Citations: ${citations_c}</p>
-      <p>h-index: ${hindex_c}</p>
-      <p>i10-index: ${i10index_c}</p>
-    </div>
-  `;
+  const outputHTML =  `
+  <center style="margin-top:60px;">
+    <table style="border-style:solid;border-width:4px;">
+      <tr style="border-style:solid; border-width:4px;"><th colspan="3">Author Information</th></tr>
+      <td><b>Name : </b></td>
+      <td style="text-align:center;">${author}</td>
+      <tr style="border-style:solid; border-width:4px;"><th colspan="3">Publication Details</th></tr>
+      <td><b>Publications : </b></td>
+      <td style="text-align:center;">${publications}</td>
+      </tr>
+      <td><b>Citations: </b></td>
+      <td style="text-align:center;">${citations_c}</td>
+      </tr>
+      </tr>
+      <td><b>h-index : </b></td>
+      <td style="text-align:center;">${hindex_c}</td>
+      </tr>
+      </tr>
+      <td><b>i10-index:</b></td>
+      <td style="text-align:center;">${i10index_c}</td>
+    </table>
+  </center>`;
   
-  document.getElementById('output').innerHTML = outputHTML;
+  
   const ramImagesDiv = document.querySelector('.ram_images');
   if (ramImagesDiv) {
     ramImagesDiv.style.display = 'none';
   }
+  document.getElementById('output').innerHTML = outputHTML;
 }
-
+//search.json({ engine: "google_scholar_author", author_id: "Xl_P9V0AAAAJ", hl: "en" }, callback)
 // Fetch data from Google Scholar
 function checkeventbyID (event) {
   
@@ -76,7 +90,7 @@ function checkeventbyID (event) {
   const enteredId = document.getElementById('Search_by_Id').value.trim();
   console.log(enteredId);
 
-  const author = authors.find(author => author.id == enteredId);
+  const author = authors.find(author => author.id === enteredId);
   if (author) {
     search.json({ engine: "google_scholar_author", author_id: author.id, hl: "en" }, callback);
   } else {
