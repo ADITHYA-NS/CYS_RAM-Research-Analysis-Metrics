@@ -52,7 +52,6 @@ function callback(data) {
   const hindex_c = data['cited_by']['table'][1]['h_index']['all'];
   const i10index_c = data['cited_by']['table'][2]['i10_index']['all'];
   console.log( author + " has " + publications + " publications ~~~ citations : " + citations_c + ", h-index : " + hindex_c + ", i10-index : " + i10index_c);
-  console.log("----------------------------------------------------------------------------------------------");
   const outputHTML = `
     <div>
       <h2>${author}</h2>
@@ -77,7 +76,7 @@ function checkeventbyID (event) {
   const enteredId = document.getElementById('Search_by_Id').value.trim();
   console.log(enteredId);
 
-  const author = authors.find(author => author.id === enteredId);
+  const author = authors.find(author => author.id == enteredId);
   if (author) {
     search.json({ engine: "google_scholar_author", author_id: author.id, hl: "en" }, callback);
   } else {
