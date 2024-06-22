@@ -92,7 +92,7 @@ function checkeventbyID (event) {
   if (author) {
     search.json({ engine: "google_scholar_author", author_id: author.id, hl: "en" }, callback);
   } else {
-    console.log("Author ID not found");
+    alert(`Author ID not found`);
   }
 
   event.preventDefault();
