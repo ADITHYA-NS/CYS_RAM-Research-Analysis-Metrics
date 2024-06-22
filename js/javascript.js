@@ -22,7 +22,6 @@ function show_hide(x) {
 const SerpApi = require('google-search-results-nodejs');
 const search = new SerpApi.GoogleSearch("7f9f9c41b5d103050275e9c3258d9d45e4a4fcec333b24bff50bd3ddb4c08f09");
 
-console.log("\nFetching the details from Google Scholar");
 
 // Define author IDs and their corresponding callbacks
 const authors = [
@@ -43,14 +42,13 @@ const authors = [
   { id: "ZWxL_tkAAAAJ", name: "Mr. Joseph Nelson" },
   { id: "ZWxL_tkAAAAJ", name: "Ms. Zeenath A U" }
 ];
-
 // Callback function for search.json
 function callback(data) {
-  const author = data['author']['name'];
-  const publications = data['articles'].length;
-  const citations_c = data['cited_by']['table'][0]['citations']['all'];
-  const hindex_c = data['cited_by']['table'][1]['h_index']['all'];
-  const i10index_c = data['cited_by']['table'][2]['i10_index']['all'];
+  author = data['author']['name'];
+  publications = data['articles'].length;
+  citations_c = data['cited_by']['table'][0]['citations']['all'];
+  hindex_c = data['cited_by']['table'][1]['h_index']['all'];
+  i10index_c = data['cited_by']['table'][2]['i10_index']['all'];
   console.log( author + " has " + publications + " publications ~~~ citations : " + citations_c + ", h-index : " + hindex_c + ", i10-index : " + i10index_c);
   const outputHTML =  `
   <center style="margin-top:60px;">
@@ -82,7 +80,7 @@ function callback(data) {
   }
   document.getElementById('output').innerHTML = outputHTML;
 }
-//search.json({ engine: "google_scholar_author", author_id: "Xl_P9V0AAAAJ", hl: "en" }, callback)
+search.json({ engine: "google_scholar_author", author_id: "Xl_P9V0AAAAJ", hl: "en" }, callback)
 // Fetch data from Google Scholar
 function checkeventbyID (event) {
   
