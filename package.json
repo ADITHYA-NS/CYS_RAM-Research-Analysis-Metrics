@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "google-search-results-nodejs": "^2.1.0"
+    "puppeteer": "^10.0.0"
   },
   "bundleDependencies": [
     "google-search-results-nodejs"
