@@ -8,7 +8,7 @@ Cyber Security, Amrita Vishwa Vidyapeetham. The application provides a user-frie
 -  Frontend Functionality: Implements JavaScript for dynamic frontend features, including tab navigation, dropdown toggling, and dynamic content updates.
 -  Author Search: Allows users to search for authors by ID and display their publication metrics, such as the number of publications, citations, h-index, and i10-index.
 -  User Interaction Management: Handles user interactions and alerts through client-side scripting for a seamless user experience.
--  
+  
 ### Key Technologies:
 -  Node.js: For server-side scripting and API integration.
 -  JavaScript: For client-side functionality and dynamic content updates.
